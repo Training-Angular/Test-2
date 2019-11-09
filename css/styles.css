@@ -7,6 +7,10 @@
   font-family: 'Varela Round', sans-serif;
 }
 
+body {
+  height: 100vh;
+}
+
 ul {
   list-style: none;
 }
@@ -60,9 +64,11 @@ a {
 .header {
   background: #49903d;
   display: flex;
+  height: 65px;
   justify-content: center;
   align-items: center;
 }
+
 ul.nav {
   display: flex;
   margin-left: auto;
@@ -86,6 +92,7 @@ li.nav-item {
 /* Page Contents */
 .page-contents {
   display: grid;
+  /* height: calc(100vh - 65px); */
   grid-template-columns: 200px auto;
 }
 
@@ -111,13 +118,25 @@ li.nav-item {
 /* Page contents - chat layout */
 
 .chat-layout {
-  display: grid;
-  grid-template-columns: 30% auto;
+  display: flex;
+  height: calc(100vh - 65px);
+  /* height: 100%; */
 }
 
 .chat-rightbar,
 .chat-leftbar {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-leftbar {
+  width: 30%;
+}
+
+.chat-rightbar {
+  width: 70%;
 }
 
 /* Chat leftbar */
@@ -181,7 +200,7 @@ li.nav-item {
 
 .tab-content {
   overflow: auto;
-  height: 76vh;
+  /* height: 100%; */
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -190,11 +209,11 @@ li.nav-item {
   border-bottom: 2px solid #1c6ea438;
 }
 
-/* Giong nhau */
 .chat-tab:hover {
   background: #eee;
   border-bottom-color: #1c6ea4;
 }
+
 .chat-tab.active {
   background: #eee;
   border-bottom-color: #1c6ea4;
@@ -315,7 +334,7 @@ h3.user-name {
 
 .chat-body {
   width: 100%;
-  height: 71vh;
+  /* height: 100%; */
   margin-bottom: 40px;
   overflow: auto;
   border-radius: 5px;
@@ -409,7 +428,12 @@ h3.user-name {
 
   /* PC - Chat layout */
   .chat-layout {
-    grid-template-columns: auto;
+    display: block;
+  }
+
+  .chat-rightbar,
+  .chat-leftbar {
+    width: 100%;
   }
 
   /* PC - CL - Chat rightbar */
@@ -423,6 +447,10 @@ h3.user-name {
 
   .message-input {
     height: 60px;
+  }
+
+  #message-input::placeholder {
+    font-size: 15px;
   }
 
   .chat-message {

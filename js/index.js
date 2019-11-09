@@ -20,7 +20,7 @@ function showDetailMessage() {
   var chatRightbar = document.getElementById('chat-rightbar');
   var chatLeftbar = document.getElementById('chat-leftbar');
   if (widthScreen <= 768) {
-    chatRightbar.style.display = 'block';
+    chatRightbar.style.display = 'flex';
     chatLeftbar.style.display = 'none';
   }
 }
@@ -35,7 +35,7 @@ function backListChats() {
   var chatLeftbar = document.getElementById('chat-leftbar');
 
   chatRightbar.style.display = 'none';
-  chatLeftbar.style.display = 'block';
+  chatLeftbar.style.display = 'flex';
 }
 
 var btnBack = document.getElementById('btn-back');
